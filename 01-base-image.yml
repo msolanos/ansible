@@ -1,0 +1,7 @@
+- name: Pull Base Image
+  hosts: localhost
+  tasks:
+      - name: Pull latest centos image
+        docker_image:
+            name: centos
+            tag: latest

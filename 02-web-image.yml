@@ -1,0 +1,7 @@
+- name: Create Web Image
+  hosts: localhost
+  tasks:
+      - name: Use centos as base image and install apache server
+        docker_image:
+            path: /home/manuel/Dev/DTT/demo/ansible/web-img
+            name: web-image

@@ -1,0 +1,12 @@
+- name: Create a New Container
+  hosts: localhost
+  tasks:
+      - name: Create a container base on web-image server
+        docker_container:
+            name: web-container
+            image: web-image
+            state: started
+            ports:
+                - "8080:80"
+            tty: true
+            detach: true

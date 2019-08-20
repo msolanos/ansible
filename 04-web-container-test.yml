@@ -1,0 +1,10 @@
+- name: Test Container Availability
+  hosts: localhost
+  connection: local
+  tasks:
+      - name: Test that the container is responding
+        uri:
+            url: http://localhost:8080
+            return_content: yes
+        register: this
+        failed_when: "'2019' not in this.content"
